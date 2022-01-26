@@ -1,0 +1,100 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img width="40" alt="Angular Logo"
+    src="https://serfinanzavirtual.bancoserfinanza.com/Personal/assets/img/logo2.png" />
+  <div class="spacer"></div>
+</div>
+
+<div class=" justify-content-center" role="main">
+  <div class="row">
+
+    <div class="col-lg-6 p-5">
+      <div class="row">
+        <div class="col-1 logo-super">
+          <img src="https://serfinanzavirtual.bancoserfinanza.com/Personal/Assets/img/superfinanciera%20Vigilado-01.jpg"
+            alt="Vigilado Superfinanciera">
+        </div>
+        <div class="col-10">
+          <div class="loginContainer">
+            <div class="row">
+              <div class="col-12 text-center">
+                <h2>BIENVENIDO A SERFIPRUEBA</h2>
+              </div>
+            </div>
+            <div class="row m-3">
+              <div class="col-12">
+                <input type="text" class="form-control" id="nombre"  [(ngModel)]="nombre" name="nombre"  placeholder="Ingresa Nombre Completo"
+                  maxlength="50" autocomplete="off">
+              </div>
+            </div>
+            <div class="row m-3">
+              <div class="col-12">
+                <input type="text" class="form-control" id="pais" name="pais" [(ngModel)]="pais"  placeholder="Ingresa Pais" maxlength="50"
+                  autocomplete="off">
+              </div>
+            </div>
+            <div class="row m-3">
+              <div class="col-12">
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email"
+                  placeholder="Ingresa Correo Electrinico" maxlength="50" autocomplete="off">
+              </div>
+            </div>
+            <div class="row m-3">
+              <div class="col-12">
+                <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="phone"  placeholder="Ingresa Telefono"
+                  maxlength="20" autocomplete="off">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 text-center">
+                <button type="button" class="btn btn-primary"  id="btn-modal-otp" (click)="registrar()">Registrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 p-5">
+      <div class="justify-content-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://serfinanzavirtual.bancoserfinanza.com/Personal/assets/img/banner-portal-transaccional-3.jpg"
+                class="d-block w-100 br-1em" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://serfinanzavirtual.bancoserfinanza.com/Personal/assets/img/banner-portal-transaccional-1.jpg"
+                class="d-block w-100 br-1em" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://serfinanzavirtual.bancoserfinanza.com/Personal/assets/img/banner-portal-transaccional-2.jpg"
+                class="d-block w-100 br-1em" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
