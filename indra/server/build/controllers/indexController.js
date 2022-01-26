@@ -18,7 +18,7 @@ class IndexController {
     index(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield database_1.default.query('SELECT * FROM multiplicacion');
-            res.json({ message: 'Datos Encontrados con exito', codigo: 0, usuario: data });
+            res.json({ message: 'Datos Encontrados con exito', codigo: 0, data: data });
         });
     }
 }

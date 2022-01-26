@@ -9,22 +9,44 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  nombre: String | undefined;
-  email: String | undefined;
-  phone: String | undefined;
-  pais: String | undefined;
-
+  public num1: number | undefined;
+  public num2: number | undefined;
+  public listado:any =[];
 
 
   constructor(private _service: DataService) { }
 
   ngOnInit() {
-
+    this.consulta();
   }
-  registrar() {
+
+  private consulta(){
+    this._service.getMultiplicacion().subscribe((value: any) => {
+      this.listado=value;
+    })
+  }
+  public deleteReg(id:Number){
+    this._service.deleteMultiplicacion(id).subscribe((value: any) => {
+      if (value['codigo'] == 0) {
+        Swal.fire(
+          'Completado',
+          value['text'],
+          'success'
+        )
+        this.consulta();
+      } else {
+        Swal.fire(
+          'Informacion',
+          'Hubo Fallos en la Ejecucion del Proceso, Intente Nuevamente',
+          'info'
+        )
+      }
+    })
+  }
+  public registrar() {
 
     if (
-      (this.nombre == undefined) || (this.nombre == null)
+      (this.num1 == undefined) || (this.num2 == null)
     ) {
       Swal.fire({
         icon: 'error',
@@ -33,7 +55,7 @@ export class AppComponent implements OnInit {
       })
     }
     else if (
-      (this.pais == undefined) || (this.pais == null)
+      (this.num2 == undefined) || (this.num2 == null)
     ) {
       Swal.fire({
         icon: 'error',
@@ -41,37 +63,21 @@ export class AppComponent implements OnInit {
         text: 'Favor Verifique el campo Pais',
       })
     }
-    else if (
-      (this.phone == undefined) || (this.phone == null)
-    ) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Campo incorrecto...',
-        text: 'Favor Verifique el campo Telefono',
-      })
-    }
-    else if (
-      (this.email == undefined) || (this.email == null)
-    ) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Campo incorrecto...',
-        text: 'Favor Verifique el campo Email',
-      })
-    } else {
+    else {
       var data = {
-        "nombre": this.nombre,
-        "pais": this.pais,
-        "celular": this.phone,
-        "email": this.email
+        "num1": Number(this.num1),
+        "num2": Number(this.num2),
       }
-      var res = this._service.saveUsuario(data).subscribe((value: any) => {
+      var res = this._service.saveMultiplicacion(data).subscribe((value: any) => {
         if (value['codigo'] == 0) {
           Swal.fire(
             'Completado',
             value['text'],
             'success'
           )
+          this.consulta();
+          this.num1=undefined;
+          this.num2=undefined;
         } else {
           Swal.fire(
             'Informacion',

@@ -1,8 +1,6 @@
 Requerimientos
 Node JS
 Typescript
-Angular CLI
-
 
 Instalacion
 Crear una base de datos en MySQL con el nombre de db_prueba_practica
@@ -14,5 +12,3 @@ Ejecutar el siguiente comando para incializar servidor backend dentro de la carp
 npm run dev
 
 
-Ejecutar el siguiente comando para incializar servidor frontend dentro de la carpeta de client
-ng server -o

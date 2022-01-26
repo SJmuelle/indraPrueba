@@ -3,6 +3,6 @@ export default {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'db_incraprueba'
+        database: 'db_prueba_practica'
     }
 }
